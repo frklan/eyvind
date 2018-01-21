@@ -1,6 +1,6 @@
 # Eyvind
 [![Raspberry Pi Zero W](https://img.shields.io/badge/RaspberryPI-Zero%20W-brightgreen.svg)](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
-[![Build Status](https://travis-ci.org/frklan/Eyvind.svg?branch=master)](https://travis-ci.org/frklan/Eyvind)
+[![Build Status](https://travis-ci.org/frklan/eyvind.svg?branch=master)](https://travis-ci.org/frklan/Eyvind)
 [![GitHub release](https://img.shields.io/github/release/frklan/Eyvind.svg)](https://github.com/frklan/Eyvind/releases)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/frklan/Eyvind/issues)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](https://github.com/frklan/Eyvind/blob/master/LICENSE)
@@ -22,6 +22,7 @@ To compile issue the following commands
 ````
 $ git clone git@github.com:frklan/Eyvind.git
 $ cd Eyvind
+$ npm install
 $ npm start 
 ````
 

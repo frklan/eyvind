@@ -140,6 +140,16 @@
       -webkit-box-shadow: none;
       box-shadow: none;
     }
+
+    table , th, td{
+      margin: 0px auto; 
+      vertical-align: center;
+      border: 0px;
+    }
+    th, td {
+      margin: 0px;
+      padding: 0px;
+    }
   </style>
 
   </head>
@@ -150,11 +160,31 @@
       write, print, read</h1>
     </header>
 
+    
+    <table>
+        <tr>
+          <th colspan="2"><form action="https://localhost:631/jobs/" method="get"><input type="submit" value="Skrivarkö" class="flat-button"></form></th>
+        </tr>
+        <tr>
+          
+          <th><form action="/shutdown" method="post"><input type="submit" value="shutdown" class="flat-button"></form></th>
+          
+          <th><form action="/reboot" method="post"><input type="submit" value="reboot" class="flat-button"></form></th>
+        </tr>
+        <tr>
+          <th><form action="/syslog" method="post"><input type="submit" value="system.log" class="flat-button" ></form></th>
+          
+          <th><form action="/cupslog" method="post"><input type="submit" value="cups.log" class="flat-button"></form></th>
+        </tr>
+      </table>
+
+    <!--
+    <form action="https://localhost:631/jobs/" method="get"><input type="submit" value="Skrivarkö" class="flat-button"></form>
+    <form action="/shutdown" method="post"><input type="submit" value="shutdown" class="flat-button"></form>
+    <form action="/reboot" method="post"><input type="submit" value="reboot" class="flat-button"></form>
     <form action="/syslog" method="post"><input type="submit" value="system.log" class="flat-button" ></form>
     <form action="/cupslog" method="post"><input type="submit" value="cups.log" class="flat-button"></form>
-    <form action="/reboot" method="post"><input type="submit" value="reboot" class="flat-button"></form>
-    <form action="/shutdown" method="post"><input type="submit" value="shutdown" class="flat-button"></form>
-    
+    -->
     <footer>
       <p><a href="https://github.com/frklan">github</a> &bull; <a href="http://www.yellowfortyfour.com">Y44</a>  &bull; <a href="https://instagram.com/frklan">@frklan</a></p>
     </footer>
