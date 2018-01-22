@@ -150,6 +150,15 @@
       margin: 0px;
       padding: 0px;
     }
+
+    pre {
+      white-space: pre-wrap;
+      background: #000;
+      border-radius: 3px;
+      padding: 20px 10% 48px 10% ;
+      text-align: left;
+      font-size: 10px
+  }
   </style>
 
   </head>
@@ -160,31 +169,12 @@
       write, print, read</h1>
     </header>
 
-    
-    <table>
-        <tr>
-          <th colspan="2"><form action="https://localhost:631/jobs/" method="get"><input type="submit" value="Skrivarkö" class="flat-button"></form></th>
-        </tr>
-        <tr>
-          
           <th><form action="/shutdown" method="post"><input type="submit" value="shutdown" class="flat-button"></form></th>
-          
           <th><form action="/reboot" method="post"><input type="submit" value="reboot" class="flat-button"></form></th>
-        </tr>
-        <tr>
           <th><form action="/syslog" method="post"><input type="submit" value="system.log" class="flat-button" ></form></th>
-          
           <th><form action="/cupslog" method="post"><input type="submit" value="cups.log" class="flat-button"></form></th>
-        </tr>
-      </table>
-
-    <!--
-    <form action="https://localhost:631/jobs/" method="get"><input type="submit" value="Skrivarkö" class="flat-button"></form>
-    <form action="/shutdown" method="post"><input type="submit" value="shutdown" class="flat-button"></form>
-    <form action="/reboot" method="post"><input type="submit" value="reboot" class="flat-button"></form>
-    <form action="/syslog" method="post"><input type="submit" value="system.log" class="flat-button" ></form>
-    <form action="/cupslog" method="post"><input type="submit" value="cups.log" class="flat-button"></form>
-    -->
+    
+    <pre>$PRINTER_LOG</pre>
     <footer>
       <p><a href="https://github.com/frklan">github</a> &bull; <a href="http://www.yellowfortyfour.com">Y44</a>  &bull; <a href="https://instagram.com/frklan">@frklan</a></p>
     </footer>
