@@ -15,9 +15,9 @@ Note: there is NO security measures implemented - if you have access to the PI w
 
 * NodeJS
 
-### Compiling
+### Compiling/running
 
-To compile issue the following commands
+To compile/run issue the following commands
 
 ````
 $ git clone git@github.com:frklan/Eyvind.git
@@ -29,7 +29,40 @@ $ npm start
 Access the app at [PI ip-address]:3000.
 
 ### Installing
-TBD
+To have the app autostart at boot do the following:
+
+1) Symlink npm and node to /usr/bin if they are not already installed there
+
+````
+$ sudo ln -s /home/pi/bin/n/bin/npm /usr/bin/npm
+$ sudo ln -s /home/pi/bin/n/bin/node /usr/bin/node
+````
+
+2) Create eyvind.service in /etc/systemd/system/
+
+````
+[Service]
+WorkingDirectory=/home/pi/src/eyvind
+ExecStart= /home/pi/bin/n/bin/npm start /home/pi/src/eyvind/app.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=eyvind
+User=pi
+Group=pi
+Environment='NODE_ENV=production'
+
+[Install]
+WantedBy=multi-user.target
+````
+
+Make sure that 'WorkingDirectory' and the paths to npm and eyvind app.js are correct.
+
+3) Install with ````sudo systemctl enable eyvind```` 
+
+4) Reboot the pi, or start with start with ````sudo systemctl start eyvind```` to avoid rebooting.
+
+Console output (info or error messages) from eyvind will show up in /var/log/syslog
 
 ### Permissions
 The pi user needs to be able to execute commands as root (i.e. using sudo command), one way to do this is to add ```pi ALL=(ALL) NOPASSWD: ALL``` to ```etc/sudoers.d/010_pi-nopasswd```. This, however is also pretty unsecure.
